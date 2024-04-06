@@ -35,7 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_elasticsearch_dsl',
     'blog.apps.BlogConfig',
+    'search.apps.SearchConfig',
     'rest_framework',
 ]
 
@@ -121,4 +123,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 25
+}
+
+
+# Elasticsearch
+# https://django-elasticsearch-dsl.readthedocs.io/en/latest/settings.html
+
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': 'localhost:9200'
+    },
 }
